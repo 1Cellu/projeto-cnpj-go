@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: bitnami/mongodb:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    volumes:
+      - mongodb_data:/bitnami/mongodb
+
+volumes:
+  mongodb_data:
+    driver: local
